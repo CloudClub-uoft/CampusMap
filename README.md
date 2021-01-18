@@ -2,40 +2,93 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-IoT-driven predictive insight into weather, foot traffic, noise levels, and more across UofT St. George campus.
+IoT-driven predictive insight into study space usage, weather, foot traffic, noise levels, and more across UofT St. George campus.
 
-## Focus
+## Features
 
-Give insight into UofT campus activity. For example:
+- **CampusMap API** - Allows anyone to retrieve historical, current, or predicted data. Powered by Firebase Cloud Functions. See `./webapp/`.
+- **CampusMap Node** - A rugged IoT device featuring a plethora of sensors. Based on the ESP32 microcontroller. See `./hardware/`.
+- **CampusMap.ca** - React app for web and mobile that presents the collected and predicted data. Features a campus-wide heatmap, time-dependent predictive graphs, and Google Calendar/Outlook integration for study space planning. See `./webapp/`.
 
-- Busyness (noise level & camera movement)
-- Study Space Density (bluetooth/MAC address device visibility)
-- Weather (temperature, humidity, light, and air quality sensors)
-- And more!
+## The Data Pipeline
 
-## CampusMap Node
+1. IoT endpoint (Node) registers to Google Cloud IoT service, collects data from sensors, and publishes it to a Firebase PubSub topic.
+2. Firebase Cloud Functions* backend processes PubSub messages and pushes them to the Firebase Realtime Database.
+3. ML model listens for Database updates, trains on new data and predicts future data.
+4. Webapp listens for Database updates to refresh data displays (graphs, etc.), and fetches historical data through the API as necessary.
 
-The IoT device itself. Based on the ESP32 microcontroller.
+*Cloud Functions also handles API calls, pulling data from the Realtime Database as necessary.
 
-### Requirements
+# Development
 
-Microcontroller:
-- Wi-Fi and Bluetooth connectivity
-- Camera support
-- Low cost
-- Popular; many open-source libraries available
+## Requirements
 
-Sensors and Power:
-- Lithium polymer battery and charging unit
-- Solar panel
-- GPS for device location
-- Camera
-- Microphone
-- Temperature sensor
-- Humidity sensor
-- Air quality sensor
-- etc. sensors
+Subproject-specific development requirements and dependencies are listed in each folder's `README`.
 
-## CampusMap.ca
+## Leads
 
-The webapp that allows users to view a 'heat map' of various values.
+- Harsimrat Singh - Club co-founder, operations and generally dealing with university bureaucracy
+- Jayden Lefebvre - Electronics design and prototyping, IoT and Backend/API lead
+- Preet Mistry - MI and analytics lead
+- Shayshu Nahata - App/Frontend lead
+
+## Todo
+
+**Metaplanning** - Replace all "..." in notes below (with *your* adjacent initials) with your expanded planning.
+
+### Phase 1 - Proposal
+
+- [ ] Planning - Done by **24/1/21**
+  - [ ] Node - **Jayden**
+    - [X] Preliminary sensor list
+      - [ ] Camera - privacy concerns? Necessary?
+      - [ ] GPS - Necessary? Alternative?
+    - [ ] Electronics BoM
+    - [ ] Preliminary electronics schematics (for checking connections and BoM completeness)
+    - [ ] Assembly BoM (fasteners, connectors, etc.)
+    - [ ] Combined Node BoM cost
+    - [ ] Software architecture
+      - [ ] UofT device "secured" WiFi credentials - consider device quantity, permanence of connection (refresh), campus coverage?
+      - [ ] Instructions from cloud?
+  - [ ] Cloud Backend (Firebase)
+    - [ ] Cloud Functions and Database - estimate total daily IoT endpoint calls + bandwidth -> pricing - **Jayden**
+    - [ ] Cloud Database - Realtime or Firestore? - **Jayden and Preet**
+    - [ ] Cloud Hosting - Pricing **Shayshu**
+    - [ ] Machine Learning - Check pricing for Google Firebase ML, how to integrate PyTorch? - **Preet**
+  - [ ] Webapp - **Shayshu**
+    - [ ] App structure outline
+    - [ ] App frontend layout
+    - [ ] ... - **SN**
+- [ ] Proof of Concept - working Node, data pipeline, webapp data display done by **31/1/21**
+  - [ ] Node - **Jayden**
+    - [ ] Electronics schematics (for PCB manufacturing)
+    - [ ] Case, PCB, sensors, etc. 3D models -> Master CAD
+    - [ ] Prototype V1 (Breadboard) with working software + data pipeline to backend
+    - [ ] Manufacturing and assembly instructions
+  - [ ] Cloud Backend
+    - [ ] Database structure - **Jayden**
+    - [ ] API Cloud Functions written - **Jayden**
+    - [ ] ... **JL**
+  - [ ] Machine Learning - **Preet**
+    - [ ] Test PyTorch + Firebase ML integration
+    - [ ] ... **PM**
+  - [ ] Webapp - **Shayshu**
+    - [ ] Graphs for displaying data
+    - [ ] Generic pretty website frontend
+    - [ ] ... **SN**
+- [ ] Proposal - **Harsimrat et al.** - Submitted by **31/1/21**
+  - [ ] Written documentation of planning
+  - [ ] Recordings (photo, video, renders) of prototype
+  - [ ] Data pipeline layout, API explanation
+  - [ ] Get deployment approval from libraries, the pit, other spaces
+  - [ ] ... **HS**
+
+### Phase 2 - Prototyping and Development
+
+**Sample implementation** - Launch the webapp on a Raspberry Pi, show it on the TVs in the Pit
+
+...
+
+### Phase 3 - Manufacturing and Deployment
+
+...
