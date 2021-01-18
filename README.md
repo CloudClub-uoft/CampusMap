@@ -51,10 +51,12 @@ Subproject-specific development requirements and dependencies are listed in each
       - [ ] UofT device "secured" WiFi credentials - consider device quantity, permanence of connection (refresh), campus coverage?
       - [ ] Instructions from cloud?
   - [ ] Cloud Backend (Firebase)
-    - [ ] Cloud Functions and Database - estimate total daily IoT endpoint calls + bandwidth -> pricing - **Jayden**
-    - [ ] Cloud Database - Realtime or Firestore? - **Jayden and Preet**
-    - [ ] Cloud Hosting - Pricing **Shayshu**
-    - [ ] Machine Learning - Check pricing for Google Firebase ML, how to integrate PyTorch? - **Preet**
+    - [ ] CloudClub support email -> Firebase - **Harsimrat and Jayden**
+    - [ ] Set up `campusmap.cloudclub.ca` -> Firebase Hosting - **Harsimrat and Jayden**
+    - [ ] Cloud Functions and Database - estimate total daily IoT endpoint calls + bandwidth -> [pricing](https://firebase.google.com/pricing) - **Jayden**
+    - [ ] Cloud Database - [Realtime or Firestore?](https://firebase.google.com/docs/database/rtdb-vs-firestore) - **Jayden and Preet**
+    - [ ] Cloud Hosting - [Pricing](https://firebase.google.com/pricing) **Shayshu**
+    - [ ] [Machine Learning](https://firebase.google.com/docs/ml/) - Check [pricing](https://firebase.google.com/pricing) for Google Firebase ML, how to use TensorFlow? - **Preet**
   - [ ] Webapp - **Shayshu**
     - [ ] App structure outline
     - [ ] App frontend layout
