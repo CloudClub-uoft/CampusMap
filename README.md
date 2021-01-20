@@ -7,7 +7,7 @@ IoT-driven predictive insight into study space usage, weather, foot traffic, noi
 ## Features
 
 - **CampusMap API** - Allows anyone to retrieve historical, current, or predicted data. Powered by Firebase Cloud Functions. See `./webapp/`.
-- **CampusMap Node** - A rugged IoT device featuring a plethora of sensors. Based on the ESP32 microcontroller. See `./hardware/`.
+- **CampusMap Node** - A rugged IoT device featuring a plethora of sensors. Tiered design for different degrees of remoteness (i.e. lithium polymer battery w/ solar for remote power, 4G LTE for remote connectivity, etc.). Based on the ESP32 microcontroller. See `./hardware/`.
 - **CampusMap.ca** - React app for web and mobile that presents the collected and predicted data. Features a campus-wide heatmap, time-dependent predictive graphs, and Google Calendar/Outlook integration for study space planning. See `./webapp/`.
 
 ## The Data Pipeline
@@ -39,18 +39,23 @@ Subproject-specific development requirements and dependencies are listed in each
 ### Phase 1 - Proposal
 
 - [ ] Planning - Done by **24/1/21**
-  - [ ] Node - **Jayden**
-    - [X] Preliminary sensor list
-      - [ ] Camera - privacy concerns? Necessary?
-      - [ ] GPS - Necessary? Alternative?
+  - [ ] Node - **Jayden and Harsimrat**
+    - [X] Preliminary components list
+      - [X] ~~Camera - privacy concerns? Necessary?~~ -> Camera unnecessary.
+      - [ ] ~~GPS - Necessary? Alternative?~~ -> Tiered deployment (in terms of remote-ness)
+      - [ ] UofT WiFi - ESP32 vs Arduino+RPi for enterprise networks? 
     - [ ] Electronics BoM
+      - [ ] Supplier? (DigiKey)
     - [ ] Preliminary electronics schematics (for checking connections and BoM completeness)
     - [ ] Assembly BoM (fasteners, connectors, etc.)
     - [ ] Combined Node BoM cost
     - [ ] Software architecture
-      - [ ] UofT device "secured" WiFi credentials - consider device quantity, permanence of connection (refresh), campus coverage?
+      - [ ] UofT device "secured" WiFi credentials - consider device quantity, permanence of connection (refresh), campus coverage? Store on-device?
       - [ ] Instructions from cloud?
   - [ ] Cloud Backend (Firebase)
+    - [ ] ***Cloud Agnosticism*** - **Jayden**
+      - [ ] Compare Firebase, AWS, Azure (cost, features, reliability, production timeline, etc.)
+      - [ ] Estimate production cost+timeline for developing bespoke solution
     - [ ] CloudClub support email -> Firebase - **Harsimrat and Jayden**
     - [ ] Set up `campusmap.cloudclub.ca` -> Firebase Hosting - **Harsimrat and Jayden**
     - [ ] Cloud Functions and Database - estimate total daily IoT endpoint calls + bandwidth -> [pricing](https://firebase.google.com/pricing) - **Jayden**

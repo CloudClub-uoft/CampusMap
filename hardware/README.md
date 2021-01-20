@@ -4,6 +4,11 @@ Includes all bill of materials (BOM), 3D printing files, schematics, manufacturi
 
 ## Design Requirements
 
+Tiered design:
+- **Tier 0** (Default) - Mains power and WiFi available
+- **Tier 1** (Outdoors) - No power, has WiFi
+- **Tier 2** (Fully Remote) - No power or WiFi
+
 Microcontroller:
 - Wi-Fi and Bluetooth connectivity
 - Camera support
@@ -11,10 +16,11 @@ Microcontroller:
 - Popular; many open-source libraries available
 
 Sensors and Power:
-- Lithium polymer battery and charging circuit
-- Solar panel and/or wall plug
-- GPS for device location (?)
-- Camera (?)
+- **(1)** Lithium polymer battery and charging circuit
+- Wall plug AC/DC power supply
+- **(1)** Solar panel
+- **(1/2?)** GPS for device location 
+- **(2)** 4G module+SIM card
 - Microphone
 - Temperature sensor
 - Humidity sensor
