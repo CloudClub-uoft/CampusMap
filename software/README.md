@@ -17,4 +17,5 @@ Includes all libraries and code for the CampusMap Node hardware. Written in C++.
 
 ## Requirements
 
-...
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [ESP8266+Arduino IDE Setup Requirements](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266/using-arduino-ide)

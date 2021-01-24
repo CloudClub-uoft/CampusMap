@@ -42,7 +42,7 @@ Subproject-specific development requirements and dependencies are listed in each
   - [ ] Node - **Jayden and Harsimrat**
     - [X] Preliminary components list
       - [X] ~~Camera - privacy concerns? Necessary?~~ -> Camera unnecessary.
-      - [ ] ~~GPS - Necessary? Alternative?~~ -> Tiered deployment (in terms of remote-ness)
+      - [X] ~~GPS - Necessary? Alternative?~~ -> Tiered deployment (in terms of remote-ness)
       - [ ] UofT WiFi - ESP32 vs Arduino+RPi for enterprise networks? 
     - [ ] Electronics BoM
       - [ ] Supplier? (DigiKey)
