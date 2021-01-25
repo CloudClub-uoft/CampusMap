@@ -34,11 +34,11 @@ Etc:
 
 Documentation for BOM parts can be found on each part's DigiKey page under "Datasheet".
 
-### Adafruit Feather HUZZAH ESP8266
+### Adafruit Feather HUZZAH32 ESP32
 
-- [Pinout, Assembly, Power Management, Programming, etc.](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266)
-- [CADs](https://github.com/adafruit/Adafruit_CAD_Parts/tree/master/2821%20Feather%20HUZZAH%20ESP8266)
-- [Schematics and PCB](https://github.com/adafruit/Adafruit-Feather-ESP8266-HUZZAH-PCB)
+- [Pinout, Assembly, Power Management, Programming, etc.](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather)
+- [CADs](https://github.com/adafruit/Adafruit_CAD_Parts/tree/master/3405%20ESP32%20Feather%20HUZZAH)
+- [Schematics and PCB](https://github.com/adafruit/Adafruit-HUZZAH32-ESP32-Feather-PCB)
 
 # Development
 
