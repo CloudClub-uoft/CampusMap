@@ -13,11 +13,12 @@ IoT-driven predictive insight into study space usage, weather, foot traffic, noi
 ## The Data Pipeline
 
 1. IoT endpoint (Node) registers to Google Cloud IoT service, collects data from sensors, and publishes it to a Firebase PubSub topic.
-2. Firebase Cloud Functions* backend processes PubSub messages and pushes them to the Firebase Realtime Database.
+2. Firebase Cloud Functions\* backend processes PubSub messages and pushes them to the Firebase Database\*\*.
 3. ML model listens for Database updates, trains on new data and predicts future data.
 4. Webapp listens for Database updates to refresh data displays (graphs, etc.), and fetches historical data through the API as necessary.
 
-*Cloud Functions also handles API calls, pulling data from the Realtime Database as necessary.
+\*Cloud Functions also handles API calls, pulling data from the Database as necessary.
+\*\*Unclear whether Realtime or Firestore (see *todo*).
 
 # Development
 
@@ -39,37 +40,37 @@ Subproject-specific development requirements and dependencies are listed in each
 ### Phase 1 - Proposal
 
 - [ ] Planning - Done by **24/1/21**
-  - [ ] Node - **Jayden and Harsimrat**
+  - [ ] Node Version 0 - Proof of data collection concept - **Jayden and Harsimrat**
     - [X] Preliminary components list
       - [X] ~~Camera - privacy concerns? Necessary?~~ -> Camera unnecessary.
       - [X] ~~GPS - Necessary? Alternative?~~ -> Tiered deployment (in terms of remote-ness)
       - [ ] UofT WiFi - ESP32 vs Arduino+RPi for enterprise networks? 
-    - [ ] Electronics BoM
-      - [ ] Supplier? (DigiKey)
+    - [X] V0 Electronics BoM
     - [ ] Preliminary electronics schematics (for checking connections and BoM completeness)
     - [ ] Assembly BoM (fasteners, connectors, etc.)
-    - [ ] Combined Node BoM cost
+    - [X] Combined Node BoM cost (prototype vs bulk estimates)
     - [ ] Software architecture
       - [ ] UofT device "secured" WiFi credentials - consider device quantity, permanence of connection (refresh), campus coverage? Store on-device?
       - [ ] Instructions from cloud?
   - [ ] Cloud Backend (Firebase)
-    - [ ] ***Cloud Agnosticism*** - **Jayden**
-      - [ ] Compare Firebase, AWS, Azure (cost, features, reliability, production timeline, etc.)
-      - [ ] Estimate production cost+timeline for developing bespoke solution
     - [ ] CloudClub support email -> Firebase - **Harsimrat and Jayden**
     - [ ] Set up `campusmap.cloudclub.ca` -> Firebase Hosting - **Harsimrat and Jayden**
     - [ ] Cloud Functions and Database - estimate total daily IoT endpoint calls + bandwidth -> [pricing](https://firebase.google.com/pricing) - **Jayden**
     - [ ] Cloud Database - [Realtime or Firestore?](https://firebase.google.com/docs/database/rtdb-vs-firestore) - **Jayden and Preet**
     - [ ] Cloud Hosting - [Pricing](https://firebase.google.com/pricing) **Shayshu**
     - [ ] [Machine Learning](https://firebase.google.com/docs/ml/) - Check [pricing](https://firebase.google.com/pricing) for Google Firebase ML, how to use TensorFlow? - **Preet**
-  - [ ] Webapp - **Shayshu**
+  - [ ] React Webapp - **Shayshu**
     - [ ] App structure outline
     - [ ] App frontend layout
     - [ ] ... - **SN**
 - [ ] Proof of Concept - working Node, data pipeline, webapp data display done by **31/1/21**
   - [ ] Node - **Jayden**
     - [ ] Electronics schematics (for PCB manufacturing)
-    - [ ] Case, PCB, sensors, etc. 3D models -> Master CAD
+    - [ ] Master CAD
+      - [ ] PCB
+      - [X] Microcontroller
+      - [ ] Sensors
+      - [ ] Power systems
     - [ ] Prototype V1 (Breadboard) with working software + data pipeline to backend
     - [ ] Manufacturing and assembly instructions
   - [ ] Cloud Backend
