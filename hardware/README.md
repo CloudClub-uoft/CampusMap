@@ -15,20 +15,16 @@ Microcontroller Board - [Adafruit HUZZAH32 ESP32 Feather](https://www.adafruit.c
 - Popular; many open-source libraries available
 
 Power and Location:
-- **(1)** Lithium polymer battery (>24Hr charge) w/ charging circuit
-- Wall plug AC/DC power supply
+- **(1)** Lithium polymer battery (~12Hr charge) ([Adafruit 2500mAh](https://www.adafruit.com/product/328))
+- Wall plug AC/DC power supply ([Adafruit PSU 5V 2A](https://www.adafruit.com/product/276)) to MicroUSB ([Adafruit Barrel to MicroUSB](https://www.adafruit.com/product/2727))
 - **(1)** Solar panel
-- **(2)** GPS for device location 
-- **(2)** 4G module+SIM card
+- **(2)** GPS for device location ([Adafruit GPS Featherwing](https://learn.adafruit.com/adafruit-feather/gps-wing))
+- **(2)** 4G module+SIM card ([Telus](https://iotshop.telus.com/ds/en/order))
 
 Sensors:
 - Microphone (Noise Levels) - [Adafruit 3421](https://www.adafruit.com/product/3421)
 - Temperature and Humidity Sensor - [DHT22](https://www.adafruit.com/product/385)
 - ~~Air quality sensor~~
-
-Etc:
-- SD card for storing data
-- LCD screen for debug messages
 
 ## References
 
