@@ -1,6 +1,6 @@
 # CampusMap Node Hardware
 
-Includes all bill of materials (BOM), 3D printing files, schematics, manufacturing and assembly instructions, etc. for the CampusMap Node hardware.
+Includes all bill of materials (BOM), 3D printing files, schematics, manufacturing and assembly instructions, etc. for the CampusMap Node hardware under version-specified folders.
 
 ## Design Requirements
 
